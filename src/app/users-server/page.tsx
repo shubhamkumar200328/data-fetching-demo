@@ -13,19 +13,9 @@ type User = {
 };
 
 export default async function usersServer() {
-  let users: User[] = [];
-
-  try {
+    await new Promise((resolve) => setTimeout(resolve,2000))
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch users: ${response.statusText}`);
-    }
-
-    users = await response.json();
-  } catch (error) {
-    console.error("Fetch error:", error);
-  }
+    const users: User[] = await response.json();
 
   return (
     <div className="m-15 p-3 bg-black text-center">
