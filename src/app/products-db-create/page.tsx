@@ -1,3 +1,4 @@
+import SubmitButton from "@/components/submit";
 import { addProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 
@@ -40,12 +41,7 @@ export default function AddProductPage(){
                     name="description"
                 />
             </label>
-            <button
-                type="submit"
-                className="bg-white text-pink-500 px-4 py-2 rounded hover:bg-pink-100 cursor-pointer my-3"
-            >
-                Add Product
-            </button>
+            <SubmitButton />
         </form>
     )
 }
