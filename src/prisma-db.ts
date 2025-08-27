@@ -15,7 +15,7 @@ const seedProducts = async () => {
   }
 };
 
-// Run seed if neededY
+// Run seed if needed
 seedProducts();
 
 export async function getProducts(query?: string) {
